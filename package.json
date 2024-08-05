@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@tuya/tuya-connector-nodejs": "^2.1.2",
+    "express": "^4.19.2"
+  }
+}
