@@ -1,6 +1,6 @@
 const express = require('express');
 const TuyaController = require('./TuyaController');
-
+const refundController = require('./refundController');
 const app = express();
 const port = 3030;
 
@@ -30,6 +30,14 @@ app.get('/devices/:infrared_id/:remote_id/status', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+
+
+// Define the route and associate it with the controller
+app.post('/refund/:id', refundController.refundPayment);
+
+
+
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
